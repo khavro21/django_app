@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% block title %} {{article.title}} Detail Page {% endblock %}
+
+{% block content %}
+
+
+
+<div class="d-flex w-100 vh-100 bg-dark text-white align-items-center justify-content-center">
+    <ul>
+    <li>
+        <p> {{ article.title }} </p>
+        <p> {{ article.content }} </p>
+        <p> {{ article.author }} </p>
+        <p> {{ article.published }} </p>
+    </li>
+    <p><a href="{% url 'articles' %}">Back to articles</a></p>
+    </ul>
+    
+</div>  
+
+{% endblock %}

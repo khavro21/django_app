@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %} Articles Page {% endblock %}
+
+{% block content %}
+
+<div class="d-flex w-100 vh-100 bg-dark text-white align-items-center justify-content-center">
+    <ul>
+    {% for article in articles %}
+    <li>
+        <a href="{% url 'article-detail' id=article.id slug=article.slug %}">{{ article.title }}</a>: {% if article.online %} Online{% else %}Offline{% endif %}
+    </li>
+    {% endfor %}
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+    </ul>
+{% endblock %}
