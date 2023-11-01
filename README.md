@@ -5,7 +5,7 @@ I commented the part where the e-mail should be sent with the contact informatio
 Also, was unable to add the tests for now. 
 
 
-To login into admin pannel:
+To login into admin panel:
 
 go to: localhost/admin
 
